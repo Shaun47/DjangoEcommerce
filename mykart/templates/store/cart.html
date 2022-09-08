@@ -39,14 +39,14 @@
                                 </div>
                                 <input type="text" class="form-control"  value="{{cartItem.quantity}}">
                                 <div class="input-group-append">
-                                <button class="btn btn-light" type="button" id="button-minus"> <i class="fa fa-plus"></i> </button>
+                                <a href="{% url 'add_cart' cartItem.product.id %}" class="btn btn-light" type="button" id="button-minus"> <i class="fa fa-plus"></i> </a>
                                 </div>
                             </div> <!-- input-group.// -->
                         </div> <!-- col.// -->
         </td>
         <td> 
             <div class="price-wrap"> 
-                <var class="price">${{cartItem.total}}</var> 
+                <var class="price">${{cartItem.sub_total}}</var> 
                 <small class="text-muted"> ${{cartItem.product.price}} each </small> 
             </div> <!-- price-wrap .// -->
         </td>
@@ -66,7 +66,7 @@
             <div class="card-body">
                 <dl class="dlist-align">
                   <dt>Total price:</dt>
-                  <dd class="text-right">$69.97</dd>
+                  <dd class="text-right">{{total}}</dd>
                 </dl>
                 <dl class="dlist-align">
                   <dt>Tax:</dt>
